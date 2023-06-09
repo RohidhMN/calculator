@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <div class="title">
+            <h1>Calculator</h1>
+        </div>
+        <div class="display">
+            <div>
+                <input class="input-field"  type="text" disabled id="txt1" />
+            </div>
+            <div class="row">
+                <div class="pad">
+                    <button class="btns" value="7" onclick="display('7')">7</button>
+                    <button class="btns" value="4" onclick="display('4')">4</button>
+                    <button class="btns" value="1" onclick="display('1')">1</button>
+                    <button class="btns operator" onclick="clr()" value="C">C</button>
+                </div>
+
+                <div class="pad">
+                    <button class="btns" value="8" onclick="display('8')">8</button>
+                    <button class="btns" value="5" onclick="display('5')">5</button>
+                    <button class="btns" value="2" onclick="display('2')">2</button>
+                    <button class="btns " value="0" onclick="display('0')">0</button>
+                </div>
+
+                <div class="pad">
+                    <button class="btns" value="9" onclick="display('9')">9</button>
+                    <button class="btns" value="6" onclick="display('6')">6</button>
+                    <button class="btns" value="3" onclick="display('3')">3</button>
+                    <button class="btns operator" value="/" onclick="display('/')">/</button>
+                </div>
+
+                <div class="pad">
+                    <button class="btns operator" onclick="display('+')" value="+">+</button>
+                    <button class="btns operator" onclick="display('-')" value="-">-</button>
+                    <button class="btns operator" onclick="display('*')" value="*">*</button>
+                    <button class="btns operator" onclick="solve()" value="=">=</button>
+                </div>
+                <script type="text/javascript">
+                    var input = document.getElementById("txt1");
+                    function display(val) {
+                        input.value += val;
+                    }
+                    function clr(){
+                        input.value = " ";
+
+                    }
+                    function solve()
+                    {
+                        let x = input.value;
+                        let y = eval(x);
+                        input.value=y;
+
+
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
